@@ -12,11 +12,11 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 Document at least 3 bugs you found. Add rows as needed.
 
-| Input | Expected Behavior | Actual Behavior | Console Output / Error |
-|-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+1. The first time when i ran the game i guessed thousand 10000 but the range was from 1to 100 and it said to go higher and the answer was 45.
+2. then the  start on Normal (8 attempts) and look at "Attempts left" before guessing anything. Then i typed  "abc" and submit it .
+Happens: it shows 7 left before you've guessed, and the bad input still eats an attempt.
+Should: show 8 left, and invalid input shouldn't cost an attempt.
+3. The New game does not reset
 
 ---
 

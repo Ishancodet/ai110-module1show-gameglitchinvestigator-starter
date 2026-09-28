@@ -69,10 +69,13 @@ with col2:
 with col3:
     show_hint = st.checkbox("Show hint", value=True)
     
-# FIXME: Logic breaks here - New Game doesn't reset status/score/history
+# FIX: New Game now resets status/score/history and uses the difficulty range. Applied via Claude Code, verified by winning then restarting.
 if new_game:
     st.session_state.attempts = 0
-    st.session_state.secret = random.randint(1, 100)
+    st.session_state.score = 0
+    st.session_state.status = "playing"
+    st.session_state.history = []
+    st.session_state.secret = random.randint(low, high)
     st.success("New game started.")
     st.rerun()
 

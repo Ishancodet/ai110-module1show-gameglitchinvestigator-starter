@@ -14,3 +14,15 @@ def test_guess_too_low():
     # If secret is 50 and guess is 40, hint should be "Too Low"
     outcome, message = check_guess(40, 50)
     assert outcome == "Too Low"
+    
+def test_too_high_hint_says_go_lower():
+    # Regression test for the backwards-hint bug
+    outcome, message = check_guess(60, 50)
+    assert outcome == "Too High"
+    assert "LOWER" in message
+
+
+def test_too_low_hint_says_go_higher():
+    outcome, message = check_guess(40, 50)
+    assert outcome == "Too Low"
+    assert "HIGHER" in message
